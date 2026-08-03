@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Neue Einstellung";src:url("fonts/NeueEinstellung-Light.otf") format("opentype");font-weight:300;font-display:swap}
+@font-face{font-family:"Neue Einstellung";src:url("fonts/NeueEinstellung-Regular.otf") format("opentype");font-weight:400;font-display:swap}
+@font-face{font-family:"Neue Einstellung";src:url("fonts/NeueEinstellung-Medium.otf") format("opentype");font-weight:500;font-display:swap}
+@font-face{font-family:"Neue Einstellung";src:url("fonts/NeueEinstellung-SemiBold.otf") format("opentype");font-weight:600;font-display:swap}
+@font-face{font-family:"Neue Einstellung";src:url("fonts/NeueEinstellung-Bold.otf") format("opentype");font-weight:700;font-display:swap}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#1C1B19;color:#F1EFEA;font-family:"Neue Einstellung",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:#57544D;text-decoration:none;transition:color .18s ease}
+a:hover{color:#1C1B19}
+::selection{background:#1C1B19;color:#F1EFEA}
+:focus-visible{outline:2px solid #8C887E;outline-offset:3px;border-radius:2px}
+input,textarea,button{font-family:inherit}
+@keyframes oo-kb{from{transform:scale(1.05)}to{transform:scale(1.14)}}
+@keyframes oo-marquee{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+[data-nav-toggle]{display:none}
+@media(max-width:900px){[data-nav-desktop]{display:none !important}[data-nav-toggle]{display:inline-flex !important}[data-hero-h]{font-size:clamp(40px,11vw,62px) !important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-hero-video]{animation:none !important}[data-marquee-track]{animation:none !important}}
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#1C1B19"/><text x="256" y="300" text-anchor="middle" font-family="Georgia, serif" font-size="150" font-weight="300" letter-spacing="-6" fill="#F1EFEA">OO</text><text x="256" y="360" text-anchor="middle" font-family="sans-serif" font-size="26" letter-spacing="8" fill="#8C887E">ONE OFFICE</text></svg></template>
+
+<a href="#conteudo" style="position:absolute;left:-9999px;top:0;background:#1C1B19;color:#F1EFEA;padding:10px 16px;z-index:200;border-radius:6px;font-weight:600" onFocus="{{ onSkipFocus }}" onBlur="{{ onSkipBlur }}">Pular para o conteúdo</a>
+
+<header data-hd="" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s ease,border-color .3s ease,backdrop-filter .3s ease;border-bottom:1px solid transparent">
+  <div style="max-width:1320px;margin:0 auto;padding:18px clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#conteudo" aria-label="One Office, início" style="display:flex;align-items:center;flex-shrink:0">
+      <img src="https://lpp.oneoffice.com.br/wp-content/uploads/2026/01/One-Office-Logo-sem-fundo-Branco_editado_R0.png" referrerpolicy="no-referrer" alt="One Office" style="height:32px;width:auto">
+    </a>
+    <nav data-nav-desktop="" aria-label="Navegação principal" style="display:flex;align-items:center;gap:36px">
+      <a href="#servicos" style="color:#E9E6DF;font-size:14.5px;font-weight:400;letter-spacing:.01em">Serviços</a>
+      <a href="#tecnologia" style="color:#E9E6DF;font-size:14.5px;font-weight:400;letter-spacing:.01em">Tecnologia</a>
+      <a href="#projetos" style="color:#E9E6DF;font-size:14.5px;font-weight:400;letter-spacing:.01em">Projetos</a>
+      <a href="#diferenciais" style="color:#E9E6DF;font-size:14.5px;font-weight:400;letter-spacing:.01em">Diferenciais</a>
+      <a href="#contato" style="display:inline-flex;align-items:center;gap:8px;background:#F1EFEA;color:#1C1B19;padding:12px 22px;border-radius:6px;font-weight:600;font-size:14px;letter-spacing:.01em" style-hover="background:#E4E0D8">Solicite um orçamento</a>
+    </nav>
+    <button data-nav-toggle="" type="button" aria-label="Abrir menu" onClick="{{ toggleMenu }}" style="display:none;align-items:center;justify-content:center;width:46px;height:46px;background:rgba(241,239,234,0.08);border:1px solid rgba(241,239,234,0.18);border-radius:8px;cursor:pointer;color:#F1EFEA">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+    </button>
+  </div>
+</header>
+
+<div data-mobile-menu="" style="display:none;position:fixed;inset:0;z-index:150;background:#1C1B19;flex-direction:column;padding:26px clamp(20px,6vw,40px)">
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <img src="https://lpp.oneoffice.com.br/wp-content/uploads/2026/01/One-Office-Logo-sem-fundo-Branco_editado_R0.png" referrerpolicy="no-referrer" alt="One Office" style="height:30px;width:auto">
+    <button type="button" aria-label="Fechar menu" onClick="{{ closeMenu }}" style="width:46px;height:46px;background:rgba(241,239,234,0.08);border:1px solid rgba(241,239,234,0.18);border-radius:8px;cursor:pointer;color:#F1EFEA;display:flex;align-items:center;justify-content:center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Navegação mobile" style="display:flex;flex-direction:column;gap:4px;margin-top:48px">
+    <a href="#servicos" onClick="{{ closeMenu }}" style="color:#F1EFEA;font-size:30px;font-weight:300;letter-spacing:-0.01em;padding:12px 0;border-bottom:1px solid rgba(241,239,234,0.1)">Serviços</a>
+    <a href="#tecnologia" onClick="{{ closeMenu }}" style="color:#F1EFEA;font-size:30px;font-weight:300;letter-spacing:-0.01em;padding:12px 0;border-bottom:1px solid rgba(241,239,234,0.1)">Tecnologia</a>
+    <a href="#projetos" onClick="{{ closeMenu }}" style="color:#F1EFEA;font-size:30px;font-weight:300;letter-spacing:-0.01em;padding:12px 0;border-bottom:1px solid rgba(241,239,234,0.1)">Projetos</a>
+    <a href="#diferenciais" onClick="{{ closeMenu }}" style="color:#F1EFEA;font-size:30px;font-weight:300;letter-spacing:-0.01em;padding:12px 0;border-bottom:1px solid rgba(241,239,234,0.1)">Diferenciais</a>
+  </nav>
+  <a href="#contato" onClick="{{ closeMenu }}" style="margin-top:auto;text-align:center;background:#F1EFEA;color:#1C1B19;padding:16px;border-radius:8px;font-weight:600;font-size:16px">Solicite um orçamento</a>
+</div>
+
+<main id="conteudo">
+
+<section aria-label="Apresentação" style="position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:#141311">
+  <video data-hero-video="" autoplay muted loop playsinline preload="none" poster="https://lpp.oneoffice.com.br/wp-content/uploads/2026/03/I0A9317.jpg" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:oo-kb 24s ease-in-out infinite alternate">
+    <source src="https://oneoffice.com.br/wp-content/uploads/2025/05/fundo-projetos-one-office-ot.mp4" type="video/mp4">
+  </video>
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,17,0.66) 0%,rgba(20,19,17,0.4) 38%,rgba(20,19,17,0.84) 80%,rgba(20,19,17,0.98) 100%)"></div>
+  <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,64px) clamp(56px,8vw,104px)">
+    <div style="max-width:980px">
+      <div data-reveal="" style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
+        <span style="width:38px;height:1px;background:#B4B0A6"></span>
+        <span style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#CFCBC2;font-weight:500">Obras corporativas de alto padrão</span>
+      </div>
+      <h1 data-hero-h="" data-reveal="" style="font-weight:300;font-size:clamp(46px,7.2vw,92px);line-height:1.02;letter-spacing:-0.025em;margin:0;color:#FBFAF7;text-wrap:balance">Ambientes corporativos à altura da sua marca.</h1>
+      <p data-reveal="" style="margin:28px 0 0;max-width:640px;font-size:clamp(17px,1.4vw,20px);line-height:1.62;color:#D5D1C8;font-weight:300">Projetamos, construímos e mobiliamos escritórios de alto padrão para grandes empresas, com equipe própria, tecnologia de visualização e controle absoluto de cada detalhe, do conceito à entrega das chaves.</p>
+      <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:14px;margin-top:38px">
+        <a href="#contato" style="display:inline-flex;align-items:center;gap:10px;background:#F1EFEA;color:#1C1B19;padding:16px 30px;border-radius:7px;font-weight:600;font-size:15.5px" style-hover="background:#E4E0D8">Solicite um orçamento
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#projetos" style="display:inline-flex;align-items:center;gap:10px;background:rgba(241,239,234,0.06);color:#F1EFEA;padding:16px 30px;border-radius:7px;font-weight:500;font-size:15.5px;border:1px solid rgba(241,239,234,0.24)" style-hover="background:rgba(241,239,234,0.12)">Ver projetos</a>
+      </div>
+      <ul data-reveal="" style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px 34px;margin:52px 0 0;padding:34px 0 0;border-top:1px solid rgba(241,239,234,0.18)">
+        <li style="display:flex;align-items:flex-start;gap:11px;color:#D5D1C8;font-size:14.5px;line-height:1.4"><span aria-hidden="true" style="color:#8C887E;margin-top:1px">·</span>Renders e vídeos com IA: veja o resultado antes da primeira parede</li>
+        <li style="display:flex;align-items:flex-start;gap:11px;color:#D5D1C8;font-size:14.5px;line-height:1.4"><span aria-hidden="true" style="color:#8C887E;margin-top:1px">·</span>Registros 360° a cada 10 dias para acompanhar de qualquer lugar</li>
+        <li style="display:flex;align-items:flex-start;gap:11px;color:#D5D1C8;font-size:14.5px;line-height:1.4"><span aria-hidden="true" style="color:#8C887E;margin-top:1px">·</span>+100 mil m² entregues para grandes empresas</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Nossa convicção" style="background:#232220;padding:clamp(72px,9vw,128px) clamp(20px,5vw,64px)">
+  <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(32px,5vw,80px);align-items:start">
+    <div data-reveal="">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <span style="width:32px;height:1px;background:#8C887E"></span>
+        <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#B4B0A6;font-weight:500">Fora do padrão de mercado</span>
+      </div>
+      <h2 style="font-weight:300;font-size:clamp(30px,4vw,52px);line-height:1.08;letter-spacing:-0.02em;margin:0;color:#FBFAF7">Cada obra carrega a exigência de quem não aceita o comum.</h2>
+    </div>
+    <div data-reveal="" style="padding-top:8px">
+      <p style="margin:0;font-size:clamp(16px,1.3vw,18.5px);line-height:1.68;color:#C4C0B7;font-weight:300">A One Office nasceu da convicção de que obras corporativas precisam de mais tecnologia, mais controle e mais compromisso com o resultado.</p>
+      <p style="margin:20px 0 0;font-size:clamp(16px,1.3vw,18.5px);line-height:1.68;color:#C4C0B7;font-weight:300">Com equipe multidisciplinar, de arquitetos e engenheiros a marceneiros e instaladores, entregamos espaços que refletem a identidade de cada empresa, com o padrão construtivo que grandes organizações exigem.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Números" style="background:#1C1B19;padding:clamp(56px,7vw,88px) clamp(20px,5vw,64px);border-bottom:1px solid rgba(241,239,234,0.08)">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(28px,4vw,48px)">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div data-reveal="" style="text-align:center">
+        <div style="font-weight:300;font-size:clamp(48px,6vw,78px);line-height:1;color:#FBFAF7;letter-spacing:-0.03em"><span data-count="{{ s.value }}">{{ s.value }}</span><span style="color:#8C887E">{{ s.suffix }}</span></div>
+        <div style="margin-top:12px;font-size:13.5px;letter-spacing:.04em;color:#A7A399;line-height:1.4;text-transform:uppercase;font-weight:500">{{ s.label }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="servicos" aria-labelledby="servicos-t" style="background:#F1EFEA;color:#1C1B19;padding:clamp(76px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal="" style="max-width:720px;margin-bottom:clamp(44px,5vw,72px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+        <span style="width:32px;height:1px;background:#8C887E"></span>
+        <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#57544D;font-weight:600">Atuação</span>
+      </div>
+      <h2 id="servicos-t" style="font-weight:300;font-size:clamp(32px,4.4vw,58px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#1C1B19">Tudo o que sua obra corporativa precisa. Em um só lugar.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">
+      <sc-for list="{{ services }}" as="svc" hint-placeholder-count="4">
+        <article data-reveal="" style="background:#F8F6F1;border:1px solid rgba(28,27,25,0.1);border-radius:14px;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;min-height:100%;transition:box-shadow .2s ease,transform .2s ease" style-hover="box-shadow:0 18px 44px rgba(28,27,25,0.12);transform:translateY(-3px)">
+          <span style="font-size:15px;color:#8C887E;font-weight:600;letter-spacing:.02em">{{ svc.n }}</span>
+          <h3 style="font-size:clamp(19px,1.6vw,23px);font-weight:500;letter-spacing:-0.01em;margin:16px 0 12px;color:#1C1B19;line-height:1.2">{{ svc.title }}</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:#5F5B53;font-weight:400">{{ svc.desc }}</p>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="tecnologia" aria-labelledby="tec-t" style="background:#1C1B19;padding:clamp(76px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal="" style="max-width:760px;margin-bottom:clamp(48px,6vw,80px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+        <span style="width:32px;height:1px;background:#8C887E"></span>
+        <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#B4B0A6;font-weight:500">Atenção em cada detalhe</span>
+      </div>
+      <h2 id="tec-t" style="font-weight:300;font-size:clamp(32px,4.4vw,58px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#FBFAF7">Veja o resultado antes de construir. Acompanhe cada passo depois.</h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4.5vw,64px);align-items:center">
+      <figure data-reveal="" data-rv="left" style="position:relative;margin:0;border-radius:18px;overflow:hidden;background:#141311;aspect-ratio:4/3;box-shadow:0 34px 80px -34px rgba(0,0,0,0.75)">
+        <img src="https://lpp.oneoffice.com.br/wp-content/uploads/2026/03/002-Asper.jpg" referrerpolicy="no-referrer" alt="Render hiper-realista de um ambiente corporativo gerado com inteligência artificial" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <figcaption style="position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;background:rgba(20,19,17,0.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(241,239,234,0.2);font-size:11.5px;letter-spacing:.08em;color:#F1EFEA;text-transform:uppercase;font-weight:500"><span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#F1EFEA"></span>Render com IA</figcaption>
+      </figure>
+      <div data-reveal="" data-rv="right">
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:18px">
+          <span style="font-size:clamp(30px,3vw,44px);font-weight:200;color:#57544D;line-height:1;letter-spacing:-0.03em">01</span>
+          <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8C887E;font-weight:600">Antes da obra</span>
+        </div>
+        <h3 style="font-weight:500;font-size:clamp(24px,2.6vw,34px);line-height:1.14;letter-spacing:-0.015em;margin:0 0 16px;color:#FBFAF7">Um tour pelo seu escritório, antes da primeira parede.</h3>
+        <p style="margin:0 0 14px;font-size:16.5px;line-height:1.66;color:#C4C0B7;font-weight:300">Utilizamos inteligência artificial para criar vídeos e renders hiper-realistas do seu projeto. Você navega pelo espaço, avalia materiais, cores e layout.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.66;color:#E9E6DF;font-weight:400">Nenhuma parede sobe sem a sua aprovação.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:9px;margin-top:24px">
+          <span style="font-size:12.5px;color:#C4C0B7;border:1px solid rgba(241,239,234,0.16);border-radius:999px;padding:7px 14px">Materiais reais</span>
+          <span style="font-size:12.5px;color:#C4C0B7;border:1px solid rgba(241,239,234,0.16);border-radius:999px;padding:7px 14px">Cores e layout</span>
+          <span style="font-size:12.5px;color:#C4C0B7;border:1px solid rgba(241,239,234,0.16);border-radius:999px;padding:7px 14px">Aprovação prévia</span>
+        </div>
+      </div>
+    </div>
+
+    <div aria-hidden="true" style="height:1px;background:linear-gradient(90deg,rgba(241,239,234,0.16),rgba(241,239,234,0));margin:clamp(44px,5.5vw,80px) 0"></div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(28px,4.5vw,64px);align-items:center">
+      <div data-reveal="" data-rv="left">
+        <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:18px">
+          <span style="font-size:clamp(30px,3vw,44px);font-weight:200;color:#57544D;line-height:1;letter-spacing:-0.03em">02</span>
+          <span style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8C887E;font-weight:600">Durante a obra</span>
+        </div>
+        <h3 style="font-weight:500;font-size:clamp(24px,2.6vw,34px);line-height:1.14;letter-spacing:-0.015em;margin:0 0 16px;color:#FBFAF7">Raio-X da sua obra, do primeiro dia à entrega.</h3>
+        <p style="margin:0 0 14px;font-size:16.5px;line-height:1.66;color:#C4C0B7;font-weight:300">Capturamos fotos 360° de toda a obra e disponibilizamos em uma plataforma digital. Você navega pelo canteiro como se estivesse lá, de qualquer lugar.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.66;color:#E9E6DF;font-weight:400">Controle total, sem sair da sua mesa.</p>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-top:24px;padding-top:22px;border-top:1px solid rgba(241,239,234,0.12)">
+          <span data-count="10" style="font-size:clamp(34px,3.6vw,50px);font-weight:200;color:#FBFAF7;letter-spacing:-0.03em;line-height:1">10</span>
+          <span style="font-size:14px;color:#A7A399;line-height:1.35;font-weight:300">dias entre cada novo registro 360° do canteiro</span>
+        </div>
+      </div>
+      <figure data-reveal="" data-rv="right" style="position:relative;margin:0;border-radius:18px;overflow:hidden;background:#141311;aspect-ratio:4/3;box-shadow:0 34px 80px -34px rgba(0,0,0,0.75)">
+        <img src="https://lpp.oneoffice.com.br/wp-content/uploads/2026/03/Frame-25.jpg" referrerpolicy="no-referrer" alt="Registro 360° do canteiro de obras acessível pela plataforma digital" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <figcaption style="position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;background:rgba(20,19,17,0.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(241,239,234,0.2);font-size:11.5px;letter-spacing:.08em;color:#F1EFEA;text-transform:uppercase;font-weight:500"><span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:#F1EFEA"></span>Registro 360°</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Do render à realidade" style="position:relative;min-height:clamp(460px,82vh,860px);background:#141311;overflow:hidden;display:flex;align-items:flex-end">
+  <video data-body-video="" autoplay muted loop playsinline preload="none" poster="https://lpp.oneoffice.com.br/wp-content/uploads/2026/03/69_NSTech.jpg" aria-label="Vídeo hiper-realista de um projeto corporativo da One Office" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <source src="https://lpp.oneoffice.com.br/wp-content/uploads/2026/03/HDOF-1.mp4" type="video/mp4">
+  </video>
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,19,17,0.5) 0%,rgba(20,19,17,0.1) 45%,rgba(20,19,17,0.92) 100%)"></div>
+  <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 clamp(20px,5vw,64px) clamp(48px,7vw,96px)">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+      <span style="width:32px;height:1px;background:#B4B0A6"></span>
+      <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#CFCBC2;font-weight:500">Do render à realidade</span>
+    </div>
+    <h2 style="font-weight:300;font-size:clamp(30px,4.6vw,60px);line-height:1.05;letter-spacing:-0.02em;margin:0;max-width:820px;color:#FBFAF7">O projeto que você aprovou, construído exatamente como imaginou.</h2>
+  </div>
+</section>
+
+<section id="projetos" aria-labelledby="proj-t" style="background:#232220;padding:clamp(76px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1320px;margin:0 auto">
+    <div data-reveal="" style="max-width:720px;margin-bottom:clamp(40px,5vw,64px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+        <span style="width:32px;height:1px;background:#8C887E"></span>
+        <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#B4B0A6;font-weight:500">Projetos</span>
+      </div>
+      <h2 id="proj-t" style="font-weight:300;font-size:clamp(32px,4.4vw,58px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#FBFAF7">Espaços que refletem a excelência de quem os ocupa.</h2>
+    </div>
+    <div style="columns:clamp(220px,26vw,320px);column-gap:14px">
+      <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="8">
+        <figure data-reveal="" style="margin:0 0 14px;break-inside:avoid;border-radius:12px;overflow:hidden;background:#141311;aspect-ratio:{{ g.ratio }}">
+          <img src="{{ g.src }}" referrerpolicy="no-referrer" alt="{{ g.alt }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .5s ease" style-hover="transform:scale(1.05)">
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="diferenciais" aria-labelledby="dif-t" style="background:#1C1B19;padding:clamp(76px,9vw,136px) clamp(20px,5vw,64px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal="" style="max-width:720px;margin-bottom:clamp(44px,5vw,72px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+        <span style="width:32px;height:1px;background:#8C887E"></span>
+        <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#B4B0A6;font-weight:500">Diferenciais</span>
+      </div>
+      <h2 id="dif-t" style="font-weight:300;font-size:clamp(32px,4.4vw,58px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#FBFAF7">Por que grandes empresas escolhem a One Office.</h2>
+    </div>
+    <div data-timeline="" style="position:relative;max-width:920px">
+      <svg data-tl-svg="" aria-hidden="true" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;z-index:0;pointer-events:none">
+        <path data-tl-path="" fill="none" stroke="#8C887E" stroke-width="1.5" stroke-linecap="round" style="opacity:0.5"></path>
+      </svg>
+      <sc-for list="{{ diffs }}" as="d" hint-placeholder-count="4">
+        <div data-tl-item="" style="position:relative;display:grid;grid-template-columns:64px 1fr;gap:clamp(10px,2vw,26px);padding:clamp(20px,2.6vw,34px) 0;z-index:1">
+          <div style="position:relative">
+            <span data-tl-dot="" aria-hidden="true" style="position:absolute;top:50%;left:32px;width:15px;height:15px;border-radius:50%;background:#F1EFEA;box-shadow:0 0 0 4px #1C1B19,0 0 0 5px rgba(140,136,126,0.55);transform:translate(-50%,-50%) scale(0);opacity:0;transition:transform .6s cubic-bezier(.2,.9,.3,1.35),opacity .5s ease;z-index:2"></span>
+          </div>
+          <div data-reveal="" data-rv="right" style="padding-bottom:2px">
+            <span style="font-size:13px;color:#8C887E;font-weight:600;letter-spacing:.14em">{{ d.n }}</span>
+            <h3 style="font-size:clamp(19px,1.7vw,25px);font-weight:500;margin:8px 0 10px;color:#FBFAF7;line-height:1.2;letter-spacing:-0.01em">{{ d.title }}</h3>
+            <p style="margin:0;font-size:15px;line-height:1.64;color:#A7A399;font-weight:300;max-width:560px">{{ d.desc }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Clientes" style="background:#F1EFEA;padding:clamp(56px,6vw,88px) 0;overflow:hidden">
+  <p data-reveal="" style="text-align:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#57544D;font-weight:600;margin:0 0 clamp(32px,4vw,52px);padding:0 clamp(20px,5vw,64px)">Empresas que confiaram na One Office</p>
+  <div role="region" aria-label="Logos de clientes" style="position:relative;width:100%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)">
+    <div data-marquee-track="" style="display:flex;width:max-content;will-change:transform;animation:oo-marquee 42s linear infinite">
+      <ul style="display:flex;align-items:center;gap:clamp(44px,6vw,88px);list-style:none;margin:0;padding:0 clamp(22px,3vw,44px)">
+        <sc-for list="{{ clients }}" as="c" hint-placeholder-count="8">
+          <li style="flex:0 0 auto"><img src="{{ c.src }}" referrerpolicy="no-referrer" alt="{{ c.name }}" loading="lazy" style="max-height:42px;width:auto;object-fit:contain;opacity:0.6;filter:grayscale(1)"></li>
+        </sc-for>
+      </ul>
+      <ul aria-hidden="true" style="display:flex;align-items:center;gap:clamp(44px,6vw,88px);list-style:none;margin:0;padding:0 clamp(22px,3vw,44px)">
+        <sc-for list="{{ clients }}" as="c" hint-placeholder-count="8">
+          <li style="flex:0 0 auto"><img src="{{ c.src }}" referrerpolicy="no-referrer" alt="" style="max-height:42px;width:auto;object-fit:contain;opacity:0.6;filter:grayscale(1)"></li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contato" aria-labelledby="cta-t" style="background:#141311;padding:clamp(76px,9vw,140px) clamp(20px,5vw,64px);position:relative;overflow:hidden">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(40px,5vw,80px);align-items:start">
+    <div data-reveal="">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <span style="width:32px;height:1px;background:#8C887E"></span>
+        <span style="font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#B4B0A6;font-weight:500">Contato</span>
+      </div>
+      <h2 id="cta-t" style="font-weight:300;font-size:clamp(32px,4.2vw,56px);line-height:1.06;letter-spacing:-0.02em;margin:0;color:#FBFAF7">Seu próximo escritório começa com uma conversa.</h2>
+      <p style="margin:24px 0 40px;font-size:17px;line-height:1.62;color:#C4C0B7;max-width:460px;font-weight:300">Conte o que sua empresa precisa. Nossa equipe retorna rapidamente para agendar uma conversa inicial, sem compromisso.</p>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <a href="tel:+551137581151" style="display:flex;align-items:center;gap:14px;color:#E9E6DF" style-hover="color:#FBFAF7">
+          <span aria-hidden="true" style="width:42px;height:42px;flex-shrink:0;border-radius:9px;background:rgba(241,239,234,0.07);border:1px solid rgba(241,239,234,0.16);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B4B0A6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <span style="font-size:16px;font-weight:500">+55 (11) 3758-1151</span>
+        </a>
+        <a href="mailto:contato@oneoffice.com.br" style="display:flex;align-items:center;gap:14px;color:#E9E6DF" style-hover="color:#FBFAF7">
+          <span aria-hidden="true" style="width:42px;height:42px;flex-shrink:0;border-radius:9px;background:rgba(241,239,234,0.07);border:1px solid rgba(241,239,234,0.16);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B4B0A6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <span style="font-size:16px;font-weight:500">contato@oneoffice.com.br</span>
+        </a>
+        <div style="display:flex;align-items:flex-start;gap:14px;color:#A7A399">
+          <span aria-hidden="true" style="width:42px;height:42px;flex-shrink:0;border-radius:9px;background:rgba(241,239,234,0.07);border:1px solid rgba(241,239,234,0.16);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B4B0A6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span style="font-size:15px;line-height:1.5;font-weight:300;padding-top:9px">Av. das Nações Unidas, 18801, 16º andar, Cj. 1619<br>Santo Amaro, São Paulo</span>
+        </div>
+      </div>
+    </div>
+
+    <form data-reveal="" onSubmit="{{ submitForm }}" style="background:#232220;border:1px solid rgba(241,239,234,0.14);border-radius:16px;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <label for="oo-nome" style="font-size:13px;letter-spacing:.02em;color:#A7A399;font-weight:500">Nome</label>
+        <input id="oo-nome" name="nome" type="text" required autocomplete="name" placeholder="Seu nome" style="background:#141311;border:1px solid rgba(241,239,234,0.16);border-radius:8px;padding:13px 15px;color:#F1EFEA;font-size:15px" style-focus="border-color:#8C887E">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <label for="oo-empresa" style="font-size:13px;letter-spacing:.02em;color:#A7A399;font-weight:500">Empresa</label>
+        <input id="oo-empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nome da empresa" style="background:#141311;border:1px solid rgba(241,239,234,0.16);border-radius:8px;padding:13px 15px;color:#F1EFEA;font-size:15px" style-focus="border-color:#8C887E">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <label for="oo-email" style="font-size:13px;letter-spacing:.02em;color:#A7A399;font-weight:500">E-mail ou WhatsApp</label>
+        <input id="oo-email" name="email" type="text" required placeholder="Como podemos falar com você" style="background:#141311;border:1px solid rgba(241,239,234,0.16);border-radius:8px;padding:13px 15px;color:#F1EFEA;font-size:15px" style-focus="border-color:#8C887E">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <label for="oo-msg" style="font-size:13px;letter-spacing:.02em;color:#A7A399;font-weight:500">Sobre o projeto</label>
+        <textarea id="oo-msg" name="mensagem" rows="3" placeholder="Tipo de obra, tamanho aproximado, prazo desejado" style="background:#141311;border:1px solid rgba(241,239,234,0.16);border-radius:8px;padding:13px 15px;color:#F1EFEA;font-size:15px;resize:vertical;line-height:1.5"></textarea>
+      </div>
+      <button type="submit" style="margin-top:4px;background:#F1EFEA;color:#1C1B19;border:none;padding:16px;border-radius:8px;font-weight:600;font-size:15.5px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px" style-hover="background:#E4E0D8">Solicitar orçamento
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <p style="margin:0;font-size:12.5px;color:#57544D;text-align:center;line-height:1.5">Ao enviar, abriremos uma conversa no WhatsApp com seus dados.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#F1EFEA;color:#1C1B19;padding:clamp(52px,6vw,80px) clamp(20px,5vw,64px) clamp(28px,3vw,40px)">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:36px;padding-bottom:clamp(36px,4vw,52px);border-bottom:1px solid rgba(28,27,25,0.14)">
+      <div>
+        <img src="https://lpp.oneoffice.com.br/wp-content/uploads/2026/01/One-Office-Logo-sem-fundo-Grafite_editado_R0.png" referrerpolicy="no-referrer" alt="One Office" style="height:34px;width:auto;margin-bottom:18px">
+        <p style="margin:0;max-width:320px;font-size:14.5px;line-height:1.6;color:#5F5B53;font-weight:300">Obras corporativas de alto padrão, do projeto ao mobiliário, com tecnologia e controle de ponta a ponta.</p>
+      </div>
+      <div>
+        <h3 style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#57544D;font-weight:600;margin:0 0 16px">Navegação</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px">
+          <li><a href="#servicos" style="color:#3D3A34;font-size:14.5px">Serviços</a></li>
+          <li><a href="#tecnologia" style="color:#3D3A34;font-size:14.5px">Tecnologia</a></li>
+          <li><a href="#projetos" style="color:#3D3A34;font-size:14.5px">Projetos</a></li>
+          <li><a href="#diferenciais" style="color:#3D3A34;font-size:14.5px">Diferenciais</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#57544D;font-weight:600;margin:0 0 16px">Contato</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px">
+          <li><a href="tel:+551137581151" style="color:#3D3A34;font-size:14.5px">+55 (11) 3758-1151</a></li>
+          <li><a href="mailto:contato@oneoffice.com.br" style="color:#3D3A34;font-size:14.5px">contato@oneoffice.com.br</a></li>
+          <li style="color:#5F5B53;font-size:14.5px;line-height:1.5;font-weight:300">São Paulo, SP</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#57544D;font-weight:600;margin:0 0 16px">Redes</h3>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px">
+          <li><a href="https://www.instagram.com/oneofficebrasil" target="_blank" rel="noopener" style="color:#3D3A34;font-size:14.5px">Instagram</a></li>
+          <li><a href="https://br.linkedin.com/company/one-office-arquitetura-e-engenharia" target="_blank" rel="noopener" style="color:#3D3A34;font-size:14.5px">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center">
+      <span style="font-size:13px;color:#57544D">© 2026 One Office. Obras corporativas.</span>
+      <span style="font-size:13px;color:#57544D">Alto padrão, do projeto às chaves.</span>
+    </div>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const IMG = "https://lpp.oneoffice.com.br/wp-content/uploads/2026/03/";
+    const CL = "https://oneoffice.com.br/wp-content/uploads/2025/04/";
+    return {
+      toggleMenu: () => this.setMenu(true),
+      closeMenu: () => this.setMenu(false),
+      submitForm: (e) => this.submitForm(e),
+      onSkipFocus: (e) => { e.target.style.left = "16px"; e.target.style.top = "12px"; },
+      onSkipBlur: (e) => { e.target.style.left = "-9999px"; },
+      stats: [
+        { value: 100, suffix: "+ mil m²", label: "Entregues para grandes empresas" },
+        { value: 25, suffix: " anos", label: "De experiência no setor moveleiro" },
+        { value: 400, suffix: " m²", label: "Porte mínimo das obras corporativas" },
+        { value: 10, suffix: " dias", label: "Cadência dos registros 360° da obra" }
+      ],
+      services: [
+        { n: "01", title: "Turn-Key: do projeto ao mobiliário", desc: "Seu escritório projetado, construído e mobiliado por um único parceiro. Você recebe um ambiente pronto para operar, com qualidade garantida de ponta a ponta." },
+        { n: "02", title: "Execução de obras", desc: "Já tem o projeto definido? Assumimos a execução da sua obra corporativa com gestão digital e o mesmo padrão de controle dos projetos turn-key." },
+        { n: "03", title: "Retrofit corporativo", desc: "Renove e modernize seu espaço atual. Atualizamos infraestrutura, layout e acabamentos para adequar o escritório à realidade da sua empresa." },
+        { n: "04", title: "Readequações e expansões", desc: "Crescimento de equipe, mudança de layout ou novas normas. Planejamos e executamos com agilidade, minimizando o impacto na sua rotina." }
+      ],
+      gallery: [
+        { src: IMG + "002-Asper.jpg", alt: "Recepção corporativa de alto padrão, projeto Asper", ratio: "3/4" },
+        { src: IMG + "12_NSTech.jpg", alt: "Área de trabalho executiva, projeto NSTech", ratio: "4/3" },
+        { src: IMG + "I0A9317.jpg", alt: "Ambiente corporativo com acabamento premium", ratio: "1/1" },
+        { src: IMG + "008-Asper.jpg", alt: "Sala de reunião com marcenaria sob medida, projeto Asper", ratio: "4/5" },
+        { src: IMG + "74_NSTech.jpg", alt: "Espaço de convivência corporativo, projeto NSTech", ratio: "3/4" },
+        { src: IMG + "009_Cj-1o-andar.jpg", alt: "Conjunto corporativo integrado, primeiro andar", ratio: "5/4" },
+        { src: IMG + "002_Cj-101-102-Ciari-Moreira.jpg", alt: "Escritório corporativo Ciari Moreira", ratio: "3/4" },
+        { src: IMG + "36_Conjunto-A.jpg", alt: "Ambiente de trabalho com iluminação planejada", ratio: "4/3" }
+      ],
+      diffs: [
+        { n: "01", title: "Turn-key do projeto ao mobiliário", desc: "Projeto arquitetônico, engenharia, execução e mobiliário corporativo integrados. Um único responsável pelo resultado final." },
+        { n: "02", title: "25 anos no setor moveleiro", desc: "Empresa do grupo atuando há 25 anos na fabricação de mobiliário, com controle total de qualidade, custos e prazos." },
+        { n: "03", title: "Assessoria desde o imóvel", desc: "Ajudamos a encontrar o espaço ideal para sua operação, antes mesmo do projeto começar, atendendo a todos os seus critérios." },
+        { n: "04", title: "Gestão digital integrada", desc: "Plataforma centralizada com planejamento, cronograma e acompanhamento de cada etapa. Orçamento fechado, sem aditivos surpresa." }
+      ],
+      clients: [
+        { src: CL + "logo-eaton-one-office-ot.png", name: "Eaton" },
+        { src: CL + "logo-danfoss-one-office-ot.png", name: "Danfoss" },
+        { src: CL + "logo-grsa-one-office-ot.png", name: "GRSA" },
+        { src: CL + "logo-nstech-one-office-ot.png", name: "NSTech" },
+        { src: CL + "logo-hedge-investments-one-office-ot.png", name: "Hedge Investments" },
+        { src: "https://oneoffice.com.br/wp-content/uploads/2025/05/logo-center-norte-one-office-ot.png", name: "Center Norte" },
+        { src: CL + "logo-oncafari-one-office-ot.jpg", name: "Onçafari" },
+        { src: CL + "logo-columbia-integracao-one-office-ot.png", name: "Columbia Integração" }
+      ]
+    };
+  }
+
+  setMenu(open) {
+    const m = document.querySelector("[data-mobile-menu]");
+    if (!m) return;
+    m.style.display = open ? "flex" : "none";
+    document.body.style.overflow = open ? "hidden" : "";
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+    const f = e.target;
+    const g = (n) => (f.elements[n] && f.elements[n].value || "").trim();
+    let msg = "Olá, gostaria de solicitar um orçamento.";
+    const nome = g("nome"), emp = g("empresa"), contato = g("email"), det = g("mensagem");
+    if (nome) msg = "Olá, sou " + nome + (emp ? " da " + emp : "") + ". Gostaria de solicitar um orçamento.";
+    if (det) msg += " " + det;
+    if (contato) msg += " Meu contato: " + contato + ".";
+    window.open("https://wa.me/5511964150693?text=" + encodeURIComponent(msg), "_blank");
+  }
+
+  componentDidMount() {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Sticky header state
+    const hd = document.querySelector("[data-hd]");
+    const onScroll = () => {
+      if (!hd) return;
+      if (window.scrollY > 40) {
+        hd.style.background = "rgba(28,27,25,0.9)";
+        hd.style.backdropFilter = "blur(14px)";
+        hd.style.webkitBackdropFilter = "blur(14px)";
+        hd.style.borderBottomColor = "rgba(241,239,234,0.1)";
+      } else {
+        hd.style.background = "transparent";
+        hd.style.backdropFilter = "none";
+        hd.style.webkitBackdropFilter = "none";
+        hd.style.borderBottomColor = "transparent";
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Reveal on scroll (progressive enhancement — directional + auto-stagger)
+    const revs = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (!reduce && "IntersectionObserver" in window) {
+      revs.forEach((el) => {
+        const dir = el.getAttribute("data-rv") || "up";
+        let t = "translateY(30px)";
+        if (dir === "left") t = "translateX(-36px)";
+        else if (dir === "right") t = "translateX(36px)";
+        else if (dir === "scale") t = "scale(0.96)";
+        el.style.opacity = "0";
+        el.style.transform = t;
+        el.style.willChange = "opacity, transform";
+        el.style.transition = "opacity .85s cubic-bezier(.2,.7,.2,1), transform .85s cubic-bezier(.2,.7,.2,1)";
+        const sibs = el.parentElement ? Array.from(el.parentElement.children).filter((c) => c.hasAttribute("data-reveal")) : [el];
+        const idx = Math.max(0, sibs.indexOf(el));
+        el.style.transitionDelay = (sibs.length > 1 ? Math.min(idx, 7) * 85 : 0) + "ms";
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            en.target.style.opacity = "1";
+            en.target.style.transform = "none";
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+      revs.forEach((el) => io.observe(el));
+    }
+
+    // Count-up
+    const counts = Array.from(document.querySelectorAll("[data-count]"));
+    if (!reduce && "IntersectionObserver" in window) {
+      const cio = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (!en.isIntersecting) return;
+          const el = en.target;
+          const target = parseInt(el.getAttribute("data-count"), 10) || 0;
+          const dur = 1400;
+          const t0 = performance.now();
+          const tick = (now) => {
+            const p = Math.min(1, (now - t0) / dur);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(target * eased);
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = target;
+          };
+          el.textContent = "0";
+          requestAnimationFrame(tick);
+          cio.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+      counts.forEach((el) => cio.observe(el));
+    }
+
+    // Animated curved timeline
+    this.initTimeline();
+
+    // Autoplay background videos
+    this.playVideos();
+
+    // Pause hero video for reduced motion
+    if (reduce) {
+      const v = document.querySelector("[data-hero-video]");
+      if (v && v.pause) { try { v.pause(); } catch (_) {} }
+    }
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) this.setMenu(false);
+    });
+  }
+
+  playVideos() {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const vids = document.querySelectorAll("[data-hero-video],[data-body-video]");
+    vids.forEach((v) => {
+      v.muted = true;
+      v.defaultMuted = true;
+      v.volume = 0;
+      v.setAttribute("muted", "");
+      v.removeAttribute("controls");
+      v.loop = true;
+      v.setAttribute("loop", "");
+      v.addEventListener("volumechange", () => { if (!v.muted || v.volume > 0) { v.muted = true; v.volume = 0; } });
+      if (reduce) return;
+      try { v.load(); } catch (_) {}
+      const tryPlay = () => { const p = v.play(); if (p && p.catch) p.catch(() => {}); };
+      v.addEventListener("loadeddata", tryPlay, { once: true });
+      v.addEventListener("canplay", tryPlay, { once: true });
+      tryPlay();
+    });
+  }
+
+  initTimeline() {
+    const wrap = document.querySelector("[data-timeline]");
+    const svg = document.querySelector("[data-tl-svg]");
+    const path = document.querySelector("[data-tl-path]");
+    if (!wrap || !svg || !path) return;
+    const items = Array.from(wrap.querySelectorAll("[data-tl-item]"));
+    const dots = Array.from(wrap.querySelectorAll("[data-tl-dot]"));
+    if (!items.length) return;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const railW = 64;
+    let drawn = false;
+
+    const smooth = (pts) => {
+      if (pts.length < 2) return "";
+      let d = "M " + pts[0].x.toFixed(1) + " " + pts[0].y.toFixed(1);
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[i - 1] || pts[i];
+        const p1 = pts[i];
+        const p2 = pts[i + 1];
+        const p3 = pts[i + 2] || p2;
+        const c1x = p1.x + (p2.x - p0.x) / 6;
+        const c1y = p1.y + (p2.y - p0.y) / 6;
+        const c2x = p2.x - (p3.x - p1.x) / 6;
+        const c2y = p2.y - (p3.y - p1.y) / 6;
+        d += " C " + c1x.toFixed(1) + " " + c1y.toFixed(1) + " " + c2x.toFixed(1) + " " + c2y.toFixed(1) + " " + p2.x.toFixed(1) + " " + p2.y.toFixed(1);
+      }
+      return d;
+    };
+
+    const build = () => {
+      const W = wrap.clientWidth;
+      const H = wrap.offsetHeight;
+      if (!W || !H) return;
+      svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+      svg.setAttribute("width", W);
+      svg.setAttribute("height", H);
+      const n = items.length;
+      const pts = items.map((it, i) => {
+        const cy = it.offsetTop + it.offsetHeight / 2;
+        const bow = Math.sin((n > 1 ? i / (n - 1) : 0) * Math.PI) * 22;
+        return { x: railW / 2 + bow, y: cy };
+      });
+      dots.forEach((dot, i) => { if (pts[i]) dot.style.left = pts[i].x + "px"; });
+      const first = pts[0], last = pts[n - 1];
+      const all = [{ x: first.x, y: Math.max(0, first.y - 44) }].concat(pts, [{ x: last.x, y: Math.min(H, last.y + 44) }]);
+      path.setAttribute("d", smooth(all));
+      const len = path.getTotalLength();
+      path.style.strokeDasharray = len;
+      if (!drawn) path.style.strokeDashoffset = len;
+    };
+
+    build();
+    window.addEventListener("resize", build);
+    setTimeout(build, 400);
+    setTimeout(build, 1400);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+
+    if (reduce) {
+      drawn = true;
+      build();
+      path.style.strokeDashoffset = 0;
+      dots.forEach((d) => { d.style.opacity = "1"; d.style.transform = "translate(-50%,-50%) scale(1)"; });
+      return;
+    }
+
+    path.style.transition = "stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1)";
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        drawn = true;
+        build();
+        const L = path.getTotalLength();
+        path.style.strokeDasharray = L;
+        path.style.strokeDashoffset = L;
+        requestAnimationFrame(() => requestAnimationFrame(() => { path.style.strokeDashoffset = 0; }));
+        dots.forEach((d, i) => {
+          setTimeout(() => {
+            d.style.opacity = "1";
+            d.style.transform = "translate(-50%,-50%) scale(1)";
+          }, 300 + i * 200);
+        });
+        io.disconnect();
+      });
+    }, { threshold: 0.15 });
+    io.observe(wrap);
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+ONE OFFICE — Home (arquivo standalone)
+=======================================
+
+COMO USAR
+  Abra o arquivo "index.html" com duplo clique em qualquer navegador
+  moderno (Chrome, Edge, Safari, Firefox). Nao precisa de servidor nem
+  de internet para o texto/layout: as fontes ja estao embutidas no arquivo.
+
+SOBRE AS MIDIAS (videos, fotos e logos)
+  As imagens e videos sao carregados diretamente do site da One Office
+  (oneoffice.com.br). Por isso:
+   - COM internet: tudo aparece e os videos tocam normalmente.
+   - SEM internet: o layout e os textos continuam certos, mas as fotos
+     e videos ficam em branco (nao estao dentro do arquivo).
+
+  Nao foi possivel embutir as midias automaticamente porque o servidor
+  da One Office bloqueia o download por outros dominios (protecao de
+  hotlink/CORS). Como voces sao os donos do material, e simples resolver.
+
+PARA FUNCIONAR 100% OFFLINE (opcional)
+  1. Crie uma pasta "assets" ao lado do index.html.
+  2. Copie para dentro dela os arquivos abaixo (baixe do painel do site
+     ou peca ao time que gerencia o WordPress):
+
+     VIDEOS
+       fundo-projetos-one-office-ot.mp4   (video da hero, topo)
+       HDOF-1.mp4                          (video do meio da pagina)
+
+     LOGOS
+       One-Office-Logo-sem-fundo-Branco_editado_R0.png
+       One-Office-Logo-sem-fundo-Grafite_editado_R0.png
+
+     FOTOS DE PROJETOS
+       I0A9317.jpg  002-Asper.jpg  008-Asper.jpg  Frame-25.jpg
+       12_NSTech.jpg  74_NSTech.jpg  69_NSTech.jpg
+       009_Cj-1o-andar.jpg  002_Cj-101-102-Ciari-Moreira.jpg  36_Conjunto-A.jpg
+
+     LOGOS DE CLIENTES
+       logo-eaton-one-office-ot.png  logo-danfoss-one-office-ot.png
+       logo-grsa-one-office-ot.png  logo-nstech-one-office-ot.png
+       logo-hedge-investments-one-office-ot.png
+       logo-center-norte-one-office-ot.png
+       logo-oncafari-one-office-ot.jpg
+       logo-columbia-integracao-one-office-ot.png
+
+  3. No index.html, troque os enderecos que comecam com
+     "https://lpp.oneoffice.com.br/..." e "https://oneoffice.com.br/..."
+     por "assets/NOME-DO-ARQUIVO" (ex.: assets/HDOF-1.mp4).
+     Dica: use "Localizar e substituir" do editor de texto.
+
+O QUE O FORMULARIO FAZ
+  Ao enviar, abre uma conversa no WhatsApp (+55 11 96415-0693) com os
+  dados preenchidos. Altere o numero no final do index.html (procure por
+  "wa.me/") se precisar.
+
+© 2026 One Office.
