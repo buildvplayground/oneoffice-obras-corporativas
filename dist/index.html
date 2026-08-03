@@ -88,7 +88,7 @@ select option{background:#232220;color:#F1EFEA}
 </head>
 <body>
 
-<a href="#orcamento" class="oo-skip">Pular para o formulário</a>
+<a href="#orcamento" class="oo-skip">Pular para o orçamento</a>
 
 <header data-hd="" style="position:fixed;top:0;left:0;right:0;z-index:100;transition:background .3s ease,border-color .3s ease,backdrop-filter .3s ease;border-bottom:1px solid transparent">
   <div style="max-width:1320px;margin:0 auto;padding:16px clamp(20px,5vw,64px);display:flex;align-items:center;justify-content:space-between;gap:20px">
@@ -433,72 +433,6 @@ select option{background:#232220;color:#F1EFEA}
       </ul>
     </div>
 
-    <div data-reveal="" data-rv="right" style="background:#232220;border:1px solid rgba(241,239,234,0.16);border-radius:18px;padding:clamp(24px,2.6vw,36px);box-shadow:0 40px 90px -40px rgba(0,0,0,0.85)">
-      <h3 style="font-weight:500;font-size:clamp(20px,1.8vw,25px);line-height:1.2;letter-spacing:-0.015em;margin:0;color:#FBFAF7">Receba uma proposta completa em 5 a 7 dias úteis</h3>
-      <p style="margin:10px 0 24px;font-size:14.5px;line-height:1.55;color:#A7A399;font-weight:300">Preencha os dados abaixo. Retornamos em até 1 dia útil.</p>
-
-      <form data-lp-form="" style="display:flex;flex-direction:column;gap:14px">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px">
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <label for="lp-nome" style="font-size:12.5px;color:#A7A399;font-weight:500">Nome</label>
-            <input id="lp-nome" class="oo-field" name="nome" type="text" required autocomplete="name" placeholder="Seu nome" style="background:#141311;border:1px solid rgba(241,239,234,0.18);border-radius:8px;padding:12px 14px;color:#F1EFEA;font-size:15px;width:100%">
-          </div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <label for="lp-empresa" style="font-size:12.5px;color:#A7A399;font-weight:500">Empresa</label>
-            <input id="lp-empresa" class="oo-field" name="empresa" type="text" required autocomplete="organization" placeholder="Nome da empresa" style="background:#141311;border:1px solid rgba(241,239,234,0.18);border-radius:8px;padding:12px 14px;color:#F1EFEA;font-size:15px;width:100%">
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <label for="lp-contato" style="font-size:12.5px;color:#A7A399;font-weight:500">WhatsApp ou e-mail corporativo</label>
-          <input id="lp-contato" class="oo-field" name="contato" type="text" required placeholder="Como falamos com você" style="background:#141311;border:1px solid rgba(241,239,234,0.18);border-radius:8px;padding:12px 14px;color:#F1EFEA;font-size:15px">
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <label for="lp-area" style="font-size:12.5px;color:#A7A399;font-weight:500">Metragem aproximada</label>
-          <select id="lp-area" class="oo-field" name="area" required style="background:#141311;border:1px solid rgba(241,239,234,0.18);border-radius:8px;padding:12px 14px;color:#F1EFEA;font-size:15px">
-            <option value="">Selecione a metragem</option>
-            <option value="400 a 800 m²">400 a 800 m²</option>
-            <option value="800 a 1.500 m²">800 a 1.500 m²</option>
-            <option value="Acima de 1.500 m²">Acima de 1.500 m²</option>
-            <option value="Menos de 400 m²">Menos de 400 m²</option>
-          </select>
-          <p data-area-note="" role="status" style="display:none;margin:2px 0 0;font-size:12.5px;line-height:1.5;color:#CFCBC2;background:rgba(241,239,234,0.07);border:1px solid rgba(241,239,234,0.16);border-radius:8px;padding:10px 12px">Nosso foco são obras a partir de 400 m², mas avaliamos cada caso. Envie os dados que retornamos com uma orientação honesta.</p>
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:14px">
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <label for="lp-tipo" style="font-size:12.5px;color:#A7A399;font-weight:500">Tipo de obra</label>
-            <select id="lp-tipo" class="oo-field" name="tipo" required style="background:#141311;border:1px solid rgba(241,239,234,0.18);border-radius:8px;padding:12px 14px;color:#F1EFEA;font-size:15px;width:100%">
-              <option value="">Selecione</option>
-              <option value="Turn-key completo">Turn-key completo</option>
-              <option value="Execução de obra">Execução de obra</option>
-              <option value="Retrofit">Retrofit</option>
-              <option value="Readequação ou expansão">Readequação ou expansão</option>
-            </select>
-          </div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <label for="lp-prazo" style="font-size:12.5px;color:#A7A399;font-weight:500">Previsão de início</label>
-            <select id="lp-prazo" class="oo-field" name="prazo" required style="background:#141311;border:1px solid rgba(241,239,234,0.18);border-radius:8px;padding:12px 14px;color:#F1EFEA;font-size:15px;width:100%">
-              <option value="">Selecione</option>
-              <option value="Imediato">Imediato</option>
-              <option value="Em 1 a 3 meses">Em 1 a 3 meses</option>
-              <option value="Em 3 a 6 meses">Em 3 a 6 meses</option>
-              <option value="Ainda avaliando">Ainda avaliando</option>
-            </select>
-          </div>
-        </div>
-
-        <button type="submit" class="oo-btn" style="margin-top:6px;background:#F1EFEA;color:#1C1B19;border:none;padding:17px;border-radius:9px;font-weight:600;font-size:16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px">Solicitar proposta
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-        <div style="display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:center;margin-top:2px">
-          <span style="font-size:12px;color:#A7A399;display:inline-flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Dados protegidos</span>
-          <span style="font-size:12px;color:#A7A399;display:inline-flex;align-items:center;gap:6px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></svg>Resposta em até 1 dia útil</span>
-        </div>
-      </form>
-    </div>
-
   </div>
 </section>
 
@@ -532,33 +466,6 @@ select option{background:#232220;color:#F1EFEA}
 <script>
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* ---- formulário -> WhatsApp ---- */
-  var form = document.querySelector("[data-lp-form]");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var f = e.target;
-      var g = function (n) { return ((f.elements[n] && f.elements[n].value) || "").trim(); };
-      var nome = g("nome"), emp = g("empresa"), contato = g("contato");
-      var area = g("area"), tipo = g("tipo"), prazo = g("prazo");
-      var msg = "Olá, gostaria de solicitar uma proposta.";
-      if (nome) msg = "Olá, sou " + nome + (emp ? " da " + emp : "") + ". Gostaria de solicitar uma proposta.";
-      if (area) msg += " Metragem: " + area + ".";
-      if (tipo) msg += " Tipo de obra: " + tipo + ".";
-      if (prazo) msg += " Previsão de início: " + prazo + ".";
-      if (contato) msg += " Meu contato: " + contato + ".";
-      window.open("https://wa.me/5511964150693?text=" + encodeURIComponent(msg), "_blank");
-    });
-  }
-
-  var areaSel = document.getElementById("lp-area");
-  if (areaSel) {
-    areaSel.addEventListener("change", function (e) {
-      var note = document.querySelector("[data-area-note]");
-      if (note) note.style.display = e.target.value === "Menos de 400 m²" ? "block" : "none";
-    });
-  }
 
   /* ---- header no scroll ---- */
   var hd = document.querySelector("[data-hd]");
