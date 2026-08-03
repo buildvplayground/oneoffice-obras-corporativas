@@ -1,0 +1,9 @@
+# Fontes de autoria / material que NAO vai para o deploy.
+# O site publicado e apenas o conteudo de dist/ (vercel.json -> outputDirectory).
+# Padroes ancorados na raiz para nao afetar nada dentro de dist/.
+/*.dc.html
+/support.js
+/.thumbnail
+/_arquivo/
+/fonts/
+/DEPLOY.md
