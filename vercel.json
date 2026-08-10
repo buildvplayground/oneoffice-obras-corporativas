@@ -1,16 +1,11 @@
 {
-  "buildCommand": "echo 'Static site'",
-  "installCommand": "echo 'No dependencies'",
+  "buildCommand": "",
+  "installCommand": "",
   "outputDirectory": ".",
-  "framework": "static",
   "rewrites": [
     {
-      "source": "/obras-400m2/(.*)",
-      "destination": "/obras-400m²/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/obras400n/$1"
+      "source": "/obras-400m2/:path*",
+      "destination": "/obras-400m²/:path*"
     }
   ]
 }
