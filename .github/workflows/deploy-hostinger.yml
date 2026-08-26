@@ -1,15 +1,20 @@
 name: Deploy para Hostinger
 
-# Publica APENAS a LP Obras 400 m² na Hostinger.
-# Origem: pasta obras400n/ (index.html + favicon + fonts).
-# Destino: /domains/lpp.oneoffice.com.br/public_html/obras400m/
-# O docroot é um WordPress compartilhado; por isso o deploy é escopado
-# só nessa subpasta e com dangerous-clean-slate: false (não apaga nada fora dela).
+# Publica as LPs na Hostinger, cada uma na sua subpasta do domínio
+# lpp.oneoffice.com.br. O docroot é um WordPress compartilhado; por isso
+# cada passo é escopado numa subpasta e usa dangerous-clean-slate: false
+# (não apaga nada fora dela).
+#
+#   obras400n/            -> /obras400m/            (LP Obras 400 m²)
+#   obras-corporativas/   -> /obras-corporativas/   (LP Obras Corporativas — A)
+#   obras-corporativas-b/ -> /obras-corporativas-b/ (LP Obras Corporativas — B)
 on:
   push:
     branches: [ main ]
     paths:
       - 'obras400n/**'
+      - 'obras-corporativas/**'
+      - 'obras-corporativas-b/**'
       - '.github/workflows/deploy-hostinger.yml'
   workflow_dispatch:   # permite rodar manualmente pela aba Actions
 
@@ -20,7 +25,7 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
-      - name: Sincronizar via FTP
+      - name: Deploy — Obras 400 m² (/obras400m/)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -29,6 +34,38 @@ jobs:
           protocol: ftps
           local-dir: ./obras400n/
           server-dir: /domains/lpp.oneoffice.com.br/public_html/obras400m/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.claude/**
+            **/.DS_Store
+
+      - name: Deploy — Obras Corporativas A (/obras-corporativas/)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./obras-corporativas/
+          server-dir: /domains/lpp.oneoffice.com.br/public_html/obras-corporativas/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.claude/**
+            **/.DS_Store
+
+      - name: Deploy — Obras Corporativas B (/obras-corporativas-b/)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./obras-corporativas-b/
+          server-dir: /domains/lpp.oneoffice.com.br/public_html/obras-corporativas-b/
           dangerous-clean-slate: false
           exclude: |
             **/.git*
