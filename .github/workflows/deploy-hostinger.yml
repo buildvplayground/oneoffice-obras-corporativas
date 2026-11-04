@@ -8,6 +8,8 @@ name: Deploy para Hostinger
 #   obras400n/            -> /obras400m/            (LP Obras 400 m²)
 #   obras-corporativas/   -> /obras-corporativas/   (LP Obras Corporativas — A)
 #   obras-corporativas-b/ -> /obras-corporativas-b/ (LP Obras Corporativas — B)
+#   arquitetos-gerenciadoras/ -> /arquitetos-gerenciadoras/ (LP Arquitetos e Gerenciadoras;
+#                                _fonte/ fica de fora: é a fonte do index.html)
 on:
   push:
     branches: [ main ]
@@ -15,6 +17,7 @@ on:
       - 'obras400n/**'
       - 'obras-corporativas/**'
       - 'obras-corporativas-b/**'
+      - 'arquitetos-gerenciadoras/**'
       - '.github/workflows/deploy-hostinger.yml'
   workflow_dispatch:   # permite rodar manualmente pela aba Actions
 
@@ -72,3 +75,21 @@ jobs:
             **/.git*/**
             **/.claude/**
             **/.DS_Store
+
+      - name: Deploy — Arquitetos e Gerenciadoras (/arquitetos-gerenciadoras/)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./arquitetos-gerenciadoras/
+          server-dir: /domains/lpp.oneoffice.com.br/public_html/arquitetos-gerenciadoras/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.claude/**
+            **/.DS_Store
+            _fonte/**
+            **/_fonte/**
