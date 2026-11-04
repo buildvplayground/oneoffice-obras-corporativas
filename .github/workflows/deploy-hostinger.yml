@@ -5,6 +5,10 @@ name: Deploy para Hostinger
 # cada passo é escopado numa subpasta e usa dangerous-clean-slate: false
 # (não apaga nada fora dela).
 #
+# A raiz do FTP já é /home/<user>/domains/lpp.oneoffice.com.br, então o
+# server-dir começa em /public_html/. Com /domains/... a pasta era criada
+# aninhada, fora do site, e o deploy ficava verde sem publicar nada.
+#
 #   obras400n/            -> /obras400m/            (LP Obras 400 m²)
 #   obras-corporativas/   -> /obras-corporativas/   (LP Obras Corporativas — A)
 #   obras-corporativas-b/ -> /obras-corporativas-b/ (LP Obras Corporativas — B)
@@ -36,7 +40,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./obras400n/
-          server-dir: /domains/lpp.oneoffice.com.br/public_html/obras400m/
+          server-dir: /public_html/obras400m/
           dangerous-clean-slate: false
           exclude: |
             **/.git*
@@ -52,7 +56,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./obras-corporativas/
-          server-dir: /domains/lpp.oneoffice.com.br/public_html/obras-corporativas/
+          server-dir: /public_html/obras-corporativas/
           dangerous-clean-slate: false
           exclude: |
             **/.git*
@@ -68,7 +72,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./obras-corporativas-b/
-          server-dir: /domains/lpp.oneoffice.com.br/public_html/obras-corporativas-b/
+          server-dir: /public_html/obras-corporativas-b/
           dangerous-clean-slate: false
           exclude: |
             **/.git*
@@ -84,7 +88,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./arquitetos-gerenciadoras/
-          server-dir: /domains/lpp.oneoffice.com.br/public_html/arquitetos-gerenciadoras/
+          server-dir: /public_html/arquitetos-gerenciadoras/
           dangerous-clean-slate: false
           exclude: |
             **/.git*

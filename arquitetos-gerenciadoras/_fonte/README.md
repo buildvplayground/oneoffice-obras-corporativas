@@ -27,4 +27,4 @@ python3 arquitetos-gerenciadoras/_fonte/montar.py
 
 ## Publicação
 
-O passo `Deploy — Arquitetos e Gerenciadoras` do `.github/workflows/deploy-hostinger.yml` publica a pasta por FTP em `lpp.oneoffice.com.br/arquitetos-gerenciadoras/` a cada merge na main que mexa nela. A pasta `_fonte/` fica de fora do upload. Mudanças entram por branch + PR, nunca direto na main.
+O passo `Deploy — Arquitetos e Gerenciadoras` do `.github/workflows/deploy-hostinger.yml` publica a pasta por FTP em `lpp.oneoffice.com.br/arquitetos-gerenciadoras/` (server-dir `/public_html/arquitetos-gerenciadoras/`, porque a raiz do FTP já é a pasta do domínio) a cada merge na main que mexa nela. A pasta `_fonte/` fica de fora do upload. Mudanças entram por branch + PR, nunca direto na main.
